@@ -1,0 +1,39 @@
+const fs = require("fs");
+const path = require("path");
+
+// fs.mkdir(path.join(__dirname, "test"), {}, (err) => {
+//   if (err) throw err;
+//   console.log("Directory created");
+// });
+
+// fs.writeFile(
+//   path.join(__dirname, "test", "hello.txt"),
+//   "Hello world!",
+//   (err) => {
+//     if (err) throw err;
+//     console.log("Fille written to");
+
+//     fs.appendFile(
+//       path.join(__dirname, "test", "hello.txt"),
+//       " How you doing?",
+//       (err) => {
+//         if (err) throw err;
+//         console.log("Fille written to");
+//       }
+//     );
+//   }
+// );
+
+fs.readFile(path.join(__dirname, "test", "hello.txt"), "utf8", (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+
+fs.rename(
+  path.join(__dirname, "test", "hello.txt"),
+  path.join(__dirname, "test", "helloworld.txt"),
+  (err) => {
+    if (err) throw err;
+    console.log("File is renamed");
+  }
+);
