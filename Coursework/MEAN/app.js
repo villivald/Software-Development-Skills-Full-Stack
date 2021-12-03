@@ -25,6 +25,9 @@ const port = 3000;
 app.use(cors()); //CORS
 app.use(express.static(path.join(__dirname, "public"))); //Serve static files
 app.use(bodyParser.json()); //Body Parser
+app.use(passport.initialize()); //Passport
+app.use(passport.session());
+require("./config/passport")(passport);
 app.use("/users", users);
 
 //Index route
