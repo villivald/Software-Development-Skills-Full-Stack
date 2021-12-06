@@ -19,7 +19,7 @@ mongoose.connection.on("error", (err) => {
 
 const app = express();
 const users = require("./routes/users");
-const port = 3000;
+const port = process.env.PORT || 8080;
 
 //Middlewares
 app.use(cors()); //CORS
@@ -33,6 +33,10 @@ app.use("/users", users);
 //Index route
 app.get("/", (req, res) => {
   res.send("Invalid endpoint");
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
 app.listen(port, () => console.log(`Server started on port: ${port}`));
