@@ -37,10 +37,10 @@ export class MainComponent {
     );
   }
 
-  // toggleAllTodos(event: Event): void {
-  //   const target = event.target as HTMLInputElement;
-  //   this.todosService.toggleAll(target.checked);
-  // }
+  toggleAllTodos(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    this.todosService.toggleAll(target.checked);
+  }
 
   // setEditingId(editingId: string | null): void {
   //   this.editingId = editingId;
