@@ -42,7 +42,7 @@ export class MainComponent {
     this.todosService.toggleAll(target.checked);
   }
 
-  // setEditingId(editingId: string | null): void {
-  //   this.editingId = editingId;
-  // }
+  setEditingId(editingId: string | null): void {
+    this.editingId = editingId;
+  }
 }
